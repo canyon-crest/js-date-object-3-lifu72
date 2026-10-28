@@ -16,20 +16,20 @@
 // element with ID "warmUpDate".
 
 // STEP 1: Create a new Date object using: let now = new Date();
-
+let now = new Date();
 // STEP 2: Use .getDay() to get the day of the week as a number.
 //         Sunday = 0, Monday = 1, Tuesday = 2, ... Saturday = 6
-
+let dayNumber = now.getDay()
 // STEP 3: Create an array of day names:
 //         let days = ["Sunday", "Monday", "Tuesday", "Wednesday",
 //                     "Thursday", "Friday", "Saturday"];
-
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 // STEP 4: Use the day number as an index to get the day name
 //         from the array.
-
+let dayName = days[dayNumber]
 // STEP 5: Display the day name in the element with ID "warmUpDate"
 //         using document.getElementById("warmUpDate").innerHTML
-
+document.getElementById("warmUpDate").innerHTML = dayName;
 
 // ============================================
 //  PART 1: Current Date Display
@@ -38,6 +38,7 @@
 // in the element with ID "myDate".
 // Example: "4/2/2025" (no leading zeros)
 
+myDate.innerHTML = now.getMonth()+1 + "/" + now.getDate() + "/" + now.getFullYear();
 // STEP 6: Create a new Date object (or reuse the one from above).
 
 // STEP 7: Get the month using .getMonth()
@@ -58,10 +59,14 @@
 // Build a timer that counts up from 0, updating every ~10ms.
 // Display the elapsed time in seconds (e.g., "1.230") in
 // the element with ID "myTimer".
-
+let startTime = new Date().getTime();
 // STEP 11: Record the start time using new Date().getTime()
 //          This gives you the current time in milliseconds.
-
+let timer = setInterval(function() {
+    let currentTime = new Date().getTime();
+    let elapsed = (currentTime - startTime)/1000
+    document.getElementById("myTimer").innerHTML = elaspedSeconds.toFixed(3)
+}, 10);
 // STEP 12: Create a variable to hold the timer ID (for stopping later).
 //          Use setInterval() with a delay of 10 milliseconds.
 //          Inside the interval function:
@@ -69,7 +74,6 @@
 //          b) Calculate elapsed seconds: (currentTime - startTime) / 1000
 //          c) Display the elapsed time using .toFixed(3)
 //             in the element with ID "myTimer"
-
 
 // ============================================
 //  PART 3: Start/Stop Toggle Button
