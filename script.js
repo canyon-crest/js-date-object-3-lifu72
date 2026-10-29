@@ -65,7 +65,7 @@ let startTime = new Date().getTime();
 let timer = setInterval(function() {
     let currentTime = new Date().getTime();
     let elapsedSeconds = (currentTime - startTime)/1000
-    document.getElementById("myTimer").innerHTML = elaspedSeconds.toFixed(3)
+    document.getElementById("myTimer").innerHTML = elapsedSeconds.toFixed(3)
 }, 10);
 // STEP 12: Create a variable to hold the timer ID (for stopping later).
 //          Use setInterval() with a delay of 10 milliseconds.
@@ -102,7 +102,7 @@ let running = true;
 document.getElementById("myBtn").addEventListener("click", function() {
     if(running) {
         clearInterval(timer);
-        document.getElementById("myBtn").HTML = "Start"
+        document.getElementById("myBtn").innerHTML = "Start"
         running = false;
     } else {
         startTime = new Date().getTime();
